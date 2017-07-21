@@ -573,7 +573,7 @@ namespace SenseNet.Portal.Portlets.ContentCollection
             }
 
             if (mode == ContentSearchPortlet.EmptyQueryTermHandler.RemoveEmpty)
-                return ContentQuery.EmptyText;
+                return ContentQuery_NEW.EmptyText;
 
             return string.Empty;
         }

@@ -311,14 +311,14 @@ namespace SenseNet.Portal.Portlets
                         // add filter: we search only under the current context
                         var escapedPath = ctx.Path.Replace("(", "\\(").Replace(")", "\\)");
                         model.ChildrenDefinition.ContentQuery =
-                            ContentQuery.AddClause(model.ChildrenDefinition.ContentQuery,
-                            ContentQuery.AddClause(sf.Query, string.Format("InTree:\"{0}\"", escapedPath), ChainOperator.And), ChainOperator.And);
+                            ContentQuery_NEW.AddClause(model.ChildrenDefinition.ContentQuery,
+                            ContentQuery_NEW.AddClause(sf.Query, string.Format("InTree:\"{0}\"", escapedPath), ChainOperator.And), ChainOperator.And);
                     }
                 }
                 else
                 {
                     if (!string.IsNullOrEmpty(sf.Query))
-                        model.ChildrenDefinition.ContentQuery = ContentQuery.AddClause(model.ChildrenDefinition.ContentQuery,  sf.Query, ChainOperator.And);
+                        model.ChildrenDefinition.ContentQuery = ContentQuery_NEW.AddClause(model.ChildrenDefinition.ContentQuery,  sf.Query, ChainOperator.And);
                 }
             }
 

@@ -129,7 +129,7 @@ namespace SenseNet.Portal.ContentStore
 
             // add content type filter if needed
             if (!string.IsNullOrEmpty(filter))
-                content.ChildrenDefinition.ContentQuery = ContentQuery.AddClause(content.ChildrenDefinition.ContentQuery, filter, ChainOperator.And);
+                content.ChildrenDefinition.ContentQuery = ContentQuery_NEW.AddClause(content.ChildrenDefinition.ContentQuery, filter, ChainOperator.And);
 
             // in case of SmartFolder: do not override the settings given on the content
             if (!(folderParent is SmartFolder))

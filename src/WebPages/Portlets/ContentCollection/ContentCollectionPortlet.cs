@@ -344,7 +344,7 @@ namespace SenseNet.Portal.Portlets
             {
                 // combine the two queries (e.g. in case of a Smart Folder or a container with a custom children query)
                 if (!string.IsNullOrEmpty(filter))
-                    content.ChildrenDefinition.ContentQuery = ContentQuery.AddClause(content.ChildrenDefinition.ContentQuery, filter, ChainOperator.And);
+                    content.ChildrenDefinition.ContentQuery = ContentQuery_NEW.AddClause(content.ChildrenDefinition.ContentQuery, filter, ChainOperator.And);
             }
             else
             {
