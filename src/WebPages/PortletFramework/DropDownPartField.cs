@@ -95,7 +95,7 @@ namespace SenseNet.Portal.UI.PortletFramework
                 // the list is built up from a query
                 var sortinfo = new List<SortInfo>() { new SortInfo() { FieldName = "Name", Reverse = false } };
                 var settings = new QuerySettings() { EnableAutofilters = FilterStatus.Disabled, Sort = sortinfo };
-                var query = ContentQuery.CreateQuery(this.DropdownOptions.Query, settings);
+                var query = ContentQuery_NEW.CreateQuery(this.DropdownOptions.Query, settings);
                 var result = query.Execute();
                 if (result.Count == 0)
                 {

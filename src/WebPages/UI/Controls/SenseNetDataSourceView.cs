@@ -43,7 +43,7 @@ namespace SenseNet.Portal.UI.Controls
 
         internal QuerySettings Settings { get; set; }
 
-        private ContentQuery ContentQuery
+        private ContentQuery_NEW ContentQuery
         {
             get
             {
@@ -52,7 +52,7 @@ namespace SenseNet.Portal.UI.Controls
                 if (QueryText.StartsWith("<"))
                     throw new InvalidOperationException($"NodeQuery is not supported anymore: {QueryText}");
 
-                var cq = ContentQuery.CreateQuery(QueryText);
+                var cq = ContentQuery_NEW.CreateQuery(QueryText);
 
                 var clauses = string.Empty;
 
@@ -373,7 +373,7 @@ namespace SenseNet.Portal.UI.Controls
             this.Content.ChildrenDefinition.AllChildren = this.FlattenResults;
 
             // must exclude the current content from the results (in case of an InTree query)
-            this.Content.ChildrenDefinition.ContentQuery = ContentQuery.AddClause(this.Content.ChildrenDefinition.ContentQuery, string.Format("-Id:{0}", this.Content.Id), ChainOperator.And);
+            this.Content.ChildrenDefinition.ContentQuery = ContentQuery_NEW.AddClause(this.Content.ChildrenDefinition.ContentQuery, string.Format("-Id:{0}", this.Content.Id), ChainOperator.And);
 
             var children = this.Content.Children.AsEnumerable().Where(c => c != null).ToList();
 

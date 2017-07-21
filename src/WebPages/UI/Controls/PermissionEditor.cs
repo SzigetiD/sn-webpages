@@ -547,7 +547,7 @@ namespace SenseNet.Portal.UI.Controls
                 return;
 
             var ws = Workspace.GetWorkspaceForNode(ContextNode);
-            var permQuery = ContentQuery.CreateQuery("InTree:@0", null, RepositoryStructure.ImsFolderPath);
+            var permQuery = ContentQuery_NEW.CreateQuery("InTree:@0", null, RepositoryStructure.ImsFolderPath);
             if (ws != null)
                 permQuery.AddClause(string.Format("InTree:\"{0}/{1}\"", ws.Path, Repository.LocalGroupsFolderName), ChainOperator.Or);
 

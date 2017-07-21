@@ -228,7 +228,7 @@ namespace SenseNet.Portal
 
                 using (new SystemAccount())
                 {
-                    var query = ContentQuery.CreateQuery(SafeQueries.PreloadControls);
+                    var query = ContentQuery_NEW.CreateQuery(SafeQueries.PreloadControls);
                     if (!string.IsNullOrEmpty(SystemStart.WarmupControlQueryFilter))
                         query.AddClause(SystemStart.WarmupControlQueryFilter);
 

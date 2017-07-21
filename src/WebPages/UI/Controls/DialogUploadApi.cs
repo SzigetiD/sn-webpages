@@ -22,7 +22,7 @@ namespace SenseNet.Portal.UI.Controls
             if (!HasPermission())
                 return null;
 
-            var query = ContentQuery.CreateQuery("+CreatedById:" + ContentRepository.User.Current.Id);
+            var query = ContentQuery_NEW.CreateQuery("+CreatedById:" + ContentRepository.User.Current.Id);
             if (!string.IsNullOrEmpty(startUploadDate))
                 query.AddClause("ModificationDate:>='" + startUploadDate + "'");
             if (!string.IsNullOrEmpty(path) && path.StartsWith("/Root/"))

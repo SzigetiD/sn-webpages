@@ -165,7 +165,7 @@ namespace SenseNet.Portal.ContentStore
         private static object[] SearchLucene(string searchStr, string searchRoot, string contentTypes, bool simpleContent = false)
         {
             var queryStr = CreateLuceneQueryString(searchStr, searchRoot, contentTypes);
-            var query = ContentQuery.CreateQuery(queryStr, new QuerySettings
+            var query = ContentQuery_NEW.CreateQuery(queryStr, new QuerySettings
             {
                 Sort = new List<SortInfo> { new SortInfo { FieldName = "DisplayName" } },
                 EnableAutofilters = FilterStatus.Disabled,

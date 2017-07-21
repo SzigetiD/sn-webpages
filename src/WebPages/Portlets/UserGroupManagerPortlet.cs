@@ -52,7 +52,7 @@ namespace SenseNet.Portal.Portlets
             {
                 var sort = new[] { new SortInfo { FieldName = "Name" } };
                 var settings = new QuerySettings { EnableAutofilters = FilterStatus.Disabled, EnableLifespanFilter = FilterStatus.Disabled, Sort = sort };
-                var query = new ContentQuery { Text = GroupQuery, Settings  = settings};
+                var query = new ContentQuery_NEW { Text = GroupQuery, Settings  = settings};
                 query.AddClause(string.Format("-Path:({0})", string.Join(" ", Identifiers.SpecialGroupPaths)));
                 var results = query.Execute();
                 groups.AddRange(results.Nodes);

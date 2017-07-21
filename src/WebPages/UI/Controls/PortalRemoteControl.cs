@@ -715,7 +715,7 @@ namespace SenseNet.Portal.UI.Controls
                         }
                         else
                         {
-                            ContentQuery cq = null;
+                            ContentQuery_NEW cq = null;
                             var nameParts = agName.Split(new[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
                             var containerTypes = new[] { "Group", "OrganizationalUnit" };
                             switch (nameParts.Length)
@@ -724,13 +724,13 @@ namespace SenseNet.Portal.UI.Controls
                                     break;
                                 case 1:
                                     // load group or OU only by name
-                                    cq = ContentQuery.CreateQuery(ContentRepository.SafeQueries.TypeIsAndName, null, containerTypes, nameParts[0]);
+                                    cq = ContentQuery_NEW.CreateQuery(ContentRepository.SafeQueries.TypeIsAndName, null, containerTypes, nameParts[0]);
                                     break;
                                 default:
                                     // load group or OU by domain and name
                                     var domain = ContentQuery_NEW.Query(ContentRepository.SafeQueries.TypeIsAndName, null, "Domain", nameParts[0]).Nodes.FirstOrDefault();
                                     if (domain != null)
-                                        cq = ContentQuery.CreateQuery(ContentRepository.SafeQueries.InTreeAndTypeIsAndName, null,
+                                        cq = ContentQuery_NEW.CreateQuery(ContentRepository.SafeQueries.InTreeAndTypeIsAndName, null,
                                             domain.Path, containerTypes, nameParts[1]);
                                     break;
                             }
