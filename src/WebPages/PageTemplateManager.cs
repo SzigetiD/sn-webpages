@@ -310,7 +310,7 @@ namespace SenseNet.Portal
         {
             if (StorageContext.Search.ContentQueryIsAllowed)
             {
-                return ContentQuery.Query($"+TypeIs:Page +PageTemplateNode:{PageTemplateNode.Id}", QuerySettings.AdminSettings).Nodes;
+                return ContentQuery_NEW.Query($"+TypeIs:Page +PageTemplateNode:{PageTemplateNode.Id}", QuerySettings.AdminSettings).Nodes;
             }
             // we need to execute a direct database query because the outer engine is disabled
             return NodeQuery.QueryNodesByReferenceAndType("PageTemplateNode", this.PageTemplateNode.Id, ActiveSchema.NodeTypes[typeof(Page).Name], false).Nodes;

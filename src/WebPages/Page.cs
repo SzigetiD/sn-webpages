@@ -56,7 +56,7 @@ namespace SenseNet.Portal
                     if (StorageContext.Search.ContentQueryIsAllowed)
                     {
                         var queryText = $"+TypeIs:Page +SmartUrl:'{SmartUrl}' -Path:'{Path}'";
-                        result = ContentQuery.Query(queryText, QuerySettings.AdminSettings);
+                        result = ContentQuery_NEW.Query(queryText, QuerySettings.AdminSettings);
                     }
                     else
                     {
@@ -262,7 +262,7 @@ namespace SenseNet.Portal
 
         internal static QueryResult GetAllPage()
         {
-            return ContentQuery.Query("TypeIs:Page", QuerySettings.AdminSettings);
+            return ContentQuery_NEW.Query("TypeIs:Page", QuerySettings.AdminSettings);
         }
 
         public static string[] RunPagesBackground(HttpContext context, out Exception[] exceptions)

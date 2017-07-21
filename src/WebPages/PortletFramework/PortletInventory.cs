@@ -80,7 +80,7 @@ namespace SenseNet.Portal.UI.PortletFramework
         }
         public static IEnumerable<Node> GetPortletsFromRepo()
         {
-            var result = ContentQuery.Query(ContentRepository.SafeQueries.InTreeAndTypeIs, QuerySettings.AdminSettings,
+            var result = ContentQuery_NEW.Query(ContentRepository.SafeQueries.InTreeAndTypeIs, QuerySettings.AdminSettings,
                 PortletsFolderPath,
                "Portlet");
             return result.Nodes;

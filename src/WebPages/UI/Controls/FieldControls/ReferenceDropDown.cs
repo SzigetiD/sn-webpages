@@ -55,7 +55,7 @@ namespace SenseNet.Portal.UI.Controls
                         string.Join(" ", Enumerable.Range(0, typeCount).Select(i1 => "@" + i1.ToString())),
                         string.Join(" ", Enumerable.Range(typeCount, pathCount).Select(i2 => "@" + i2.ToString())));
 
-                    var optionNodes = ContentQuery.Query(queryText, null, queryParams.ToArray()).Nodes;
+                    var optionNodes = ContentQuery_NEW.Query(queryText, null, queryParams.ToArray()).Nodes;
 
                     _options = optionNodes.Select(n => new ChoiceOption(n.Id.ToString(), n["DisplayName"].ToString())).ToList();
                 }

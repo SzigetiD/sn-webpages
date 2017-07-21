@@ -754,7 +754,7 @@ namespace SenseNet.Portal.Portlets
             {
                 try
                 {
-                    var queryResult = ContentQuery.Query(
+                    var queryResult = ContentQuery_NEW.Query(
                         ContentRepository.SafeQueries.InFolderAndTypeIs, QuerySettings.AdminSettings,
                         PortalContext.Current.ContextNodeHead.Path,
                         this.UsedContentTypeName).Nodes.ToList();

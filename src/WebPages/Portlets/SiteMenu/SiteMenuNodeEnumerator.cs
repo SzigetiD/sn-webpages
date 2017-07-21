@@ -35,20 +35,14 @@ namespace SenseNet.Portal.Portlets
         protected override QueryResult QueryChildrenFromLucene(int thisId)
         {
             if (string.IsNullOrEmpty(_childrenFilter))
-            {
                 return base.QueryChildrenFromLucene(thisId);
-            }
-            else
-            {
-                // We need to apply a query filter. Execute a content 
-                // query and create a node query result on-the-fly.
-                var query = ContentQuery.CreateQuery("+ParentId:@0", null, thisId);
 
-                if (!string.IsNullOrEmpty(_childrenFilter))
-                    query.AddClause(_childrenFilter);
-
-                return new QueryResult(query.ExecuteToIds(ExecutionHint.ForceIndexedEngine));
-            }
+            // We need to apply a query filter. Execute a content 
+            // query and create a node query result on-the-fly.
+            var query = ContentQuery.CreateQuery("+ParentId:@0", null, thisId);
+            if (!string.IsNullOrEmpty(_childrenFilter))
+                query.AddClause(_childrenFilter);
+            return query.Execute();
         }
 
         protected override bool MoveToFirstChild()

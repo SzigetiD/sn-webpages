@@ -728,7 +728,7 @@ namespace SenseNet.Portal.UI.Controls
                                     break;
                                 default:
                                     // load group or OU by domain and name
-                                    var domain = ContentQuery.Query(ContentRepository.SafeQueries.TypeIsAndName, null, "Domain", nameParts[0]).Nodes.FirstOrDefault();
+                                    var domain = ContentQuery_NEW.Query(ContentRepository.SafeQueries.TypeIsAndName, null, "Domain", nameParts[0]).Nodes.FirstOrDefault();
                                     if (domain != null)
                                         cq = ContentQuery.CreateQuery(ContentRepository.SafeQueries.InTreeAndTypeIsAndName, null,
                                             domain.Path, containerTypes, nameParts[1]);

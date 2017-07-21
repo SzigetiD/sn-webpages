@@ -162,7 +162,7 @@ namespace SenseNet.Portal.UI.PortletFramework
                 return new QueryResult(new int[0]);
 
             var queryText = $"TypeIs:({string.Join(" ", validCtdNames)})";
-            return ContentQuery.Query(queryText, QuerySettings.AdminSettings);
+            return ContentQuery_NEW.Query(queryText, QuerySettings.AdminSettings);
         }
     }
 }

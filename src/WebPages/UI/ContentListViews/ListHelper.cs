@@ -74,7 +74,7 @@ namespace SenseNet.Portal.UI.ContentListViews
             if (cl == null)
                 return string.Empty;
 
-            var result = ContentQuery.Query("+InTree:@0 +TypeIs:Workflow +WorkflowStatus:1 +RelatedContent:@1 .AUTOFILTERS:OFF .LIFESPAN:OFF", null,
+            var result = ContentQuery_NEW.Query("+InTree:@0 +TypeIs:Workflow +WorkflowStatus:1 +RelatedContent:@1 .AUTOFILTERS:OFF .LIFESPAN:OFF", null,
                 cl.Path + "/Workflows", relatedContent.Id);
 
             var sb = new StringBuilder();

@@ -110,6 +110,10 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SearchImpl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta3\lib\net451\SearchImpl.dll</HintPath>
+    </Reference>
     <Reference Include="SenseNet.BlobStorage, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.BlobStorage.7.0.0-beta1\lib\net451\SenseNet.BlobStorage.dll</HintPath>
       <Private>True</Private>

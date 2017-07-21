@@ -273,7 +273,7 @@ namespace SenseNet.Portal
 
                 using (new SystemAccount())
                 {
-                    queryResult = ContentQuery.Query(SafeQueries.PreloadXslt);
+                    queryResult = ContentQuery_NEW.Query(SafeQueries.PreloadXslt);
 
                     foreach (var nodeId in queryResult.Identifiers)
                     {
@@ -313,7 +313,7 @@ namespace SenseNet.Portal
 
                 using (new SystemAccount())
                 {
-                    queryResult = ContentQuery.Query(SafeQueries.PreloadContentTemplates, null,
+                    queryResult = ContentQuery_NEW.Query(SafeQueries.PreloadContentTemplates, null,
                         RepositoryStructure.ContentTemplateFolderPath, RepositoryPath.GetDepth(RepositoryStructure.ContentTemplateFolderPath) + 2);
 
                     // ReSharper disable once UnusedVariable
